@@ -1,103 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Card, Row, Col } from 'react-bootstrap';
 
-export default function TongQuanPage({ menuUrl, isRestaurant }) {
-    const [orderCount, setOrderCount] = useState(0);
-    const [revenue, setRevenue] = useState(0);
-    const [cancelCount, setCancelCount] = useState(0);
-    const [returnValue, setReturnValue] = useState(0);
-    const [cash, setCash] = useState(0);
-    const [otherAccounts, setOtherAccounts] = useState(0);
-    const [debt, setDebt] = useState(0);
-    const [usedTables, setUsedTables] = useState('0 / 30');
-    const [expiryWarning, setExpiryWarning] = useState(0);
 
-    const goTo = (url) => {
-        // Implement navigation logic here
-        console.log(`Navigating to ${url}`);
-    };
+const TongQuanPage = () => {
+  const data = [
+    { title: 'ĐƠN HÀNG', value: '0', icon: 'fa fa-tags emerald-bg' },
+    { title: 'DOANH THU', value: '0', icon: 'fa fa-cart-arrow-down emerald-bg' },
+    { title: 'HUỶ/TRẢ ĐỒ', value: '0', icon: 'fa fa-reply emerald-bg' },
+    { title: 'GIÁ TRỊ TRẢ LẠI', value: '0', icon: 'fa fa-reply-all emerald-bg' },
+    { title: 'GHI NỢ', value: '0', icon: 'fa fa-address-card emerald-bg' },
+    { title: 'BẢN SỬ DỤNG', value: '0 / 30', icon: 'fa fa-crosshairs emerald-bg' },
+  ];
 
-    return (
-        <div className="row">
-            <div className="col-md-6">
-                <div className="main-box">
-                    <div className="clearfix">
-                        <div className="infographic-box merged merged-top pull-left has-pointer" onClick={() => goTo(menuUrl.order)}>
-                            <i className="fa fa-tags emerald-bg"></i>
-                            <span className="value emerald">{orderCount}</span>
-                            <span className="headline">ĐƠN HÀNG</span>
-                        </div>
-                        <div className="infographic-box merged merged-top merged-right pull-left has-pointer" onClick={() => goTo(menuUrl.order)}>
-                            <i className="fa fa-cart-arrow-down emerald-bg"></i>
-                            <span className="value emerald">{revenue}</span>
-                            <span className="headline">DOANH THU</span>
-                        </div>
-                    </div>
-                    {isRestaurant && (
-                        <div className="clearfix">
-                            <div className="infographic-box merged pull-left has-pointer" onClick={() => goTo(menuUrl.roomhistory)}>
-                                <i className="fa fa-reply emerald-bg"></i>
-                                <span className="value emerald">{cancelCount}</span>
-                                <span className="headline">HỦY/TRẢ ĐỒ</span>
-                            </div>
-                            <div className="infographic-box merged merged-right pull-left has-pointer" onClick={() => goTo(menuUrl.roomhistory)}>
-                                <i className="fa fa-reply-all emerald-bg"></i>
-                                <span className="value emerald">{returnValue}</span>
-                                <span className="headline">GIÁ TRỊ TRẢ LẠI</span>
-                            </div>
-                        </div>
-                    )}
-                    {!isRestaurant && (
-                        <div className="clearfix">
-                            <div className="infographic-box merged pull-left has-pointer" onClick={() => goTo(menuUrl.returns)}>
-                                <i className="fa fa-reply emerald-bg"></i>
-                                <span className="value emerald">{cancelCount}</span>
-                                <span className="headline">TRẢ HÀNG</span>
-                            </div>
-                            <div className="infographic-box merged merged-right pull-left has-pointer" onClick={() => goTo(menuUrl.returns)}>
-                                <i className="fa fa-reply-all emerald-bg"></i>
-                                <span className="value emerald">{returnValue}</span>
-                                <span className="headline">GIÁ TRỊ TRẢ LẠI</span>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-            <div className="col-md-6">
-                <div className="main-box">
-                    <div className="clearfix">
-                        <div className="infographic-box merged merged-top pull-left has-pointer" onClick={() => goTo(menuUrl.cashflow)}>
-                            <i className="fa fa-money emerald-bg"></i>
-                            <span className="value emerald">{cash}</span>
-                            <span className="headline">TIỀN MẶT</span>
-                        </div>
-                        <div className="infographic-box merged merged-top merged-right pull-left has-pointer" onClick={() => goTo(menuUrl.cashflow)}>
-                            <i className="fa fa-cc-visa emerald-bg"></i>
-                            <span className="value emerald">{otherAccounts}</span>
-                            <span className="headline">Tài khoản khác</span>
-                        </div>
-                    </div>
-                    <div className="clearfix">
-                        <div className="infographic-box merged pull-left has-pointer" onClick={() => goTo(menuUrl.customer)}>
-                            <i className="fa fa-address-card emerald-bg"></i>
-                            <span className="value emerald">{debt}</span>
-                            <span className="headline">Ghi nợ</span>
-                        </div>
-                        {isRestaurant ? (
-                            <div className="infographic-box merged merged-right pull-left has-pointer" onClick={() => goTo(menuUrl.room)}>
-                                <i className="fa fa-crosshairs emerald-bg"></i>
-                                <span className="value emerald">{usedTables}</span>
-                                <span className="headline">BÀN SỬ DỤNG</span>
-                            </div>
-                        ) : (
-                            <div className="infographic-box merged merged-right pull-left has-pointer" onClick={() => goTo(menuUrl.expirywarning)}>
-                                <i className="fa fa-bomb emerald-bg"></i>
-                                <span className="value emerald">{expiryWarning}</span>
-                                <span className="headline">HẾT HẠN SỬ DỤNG</span>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+  return (
+    <Row>
+      {data.map((item, index) => (
+        <Col key={index} xs={12} md={4} lg={2}>
+          <Card className="custom-card">
+            <Card.Body className="d-flex align-items-center justify-content-center">
+              <div className="icon-container">
+                <i className={`${item.icon} icon`}></i>
+              </div>
+              <div className="text-container">
+                <h3>{item.value}</h3>
+                <p>{item.title}</p>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  );
+};
+
+export default TongQuanPage;

@@ -10,7 +10,7 @@ function MenuBar() {
     <>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Karaoke</Navbar.Brand>
+        <Navbar.Brand href="/home">Karaoke</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         
         <Navbar.Collapse id="basic-navbar-nav">

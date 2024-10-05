@@ -1,0 +1,28 @@
+
+.custom-card {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: none;
+    text-align: center;
+  }
+  
+  .icon-container {
+    margin-right: 10px;
+  }
+  
+  .icon {
+    font-size: 40px;
+    color: #3498db; /* Adjust color as needed */
+  }
+  
+  .text-container h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .text-container p {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
