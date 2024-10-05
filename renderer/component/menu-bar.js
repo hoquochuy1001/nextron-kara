@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 
 function MenuBar() {
@@ -10,7 +11,7 @@ function MenuBar() {
     <>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/home">Karaoke</Navbar.Brand>
+        <Navbar.Brand href="/home">KARAOKE NICE</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         
         <Navbar.Collapse id="basic-navbar-nav">
@@ -69,6 +70,10 @@ function MenuBar() {
                 Thống kê doanh thu
               </NavDropdown.Item>
             </NavDropdown>
+          </Nav>
+          <Nav className="ms-auto">
+            <Button variant="primary" href="/man-hinh-thu-ngan">Màn hình thu ngân</Button>
+            <Button variant="primary" href="/nhan-vien-order" className="ms-2">Nhân viên order</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

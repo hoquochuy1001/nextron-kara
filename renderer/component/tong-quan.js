@@ -4,12 +4,12 @@ import { Card, Row, Col } from 'react-bootstrap';
 
 const TongQuanPage = () => {
   const data = [
-    { title: 'ĐƠN HÀNG', value: '0', icon: 'fa fa-tags emerald-bg' },
-    { title: 'DOANH THU', value: '0', icon: 'fa fa-cart-arrow-down emerald-bg' },
-    { title: 'HUỶ/TRẢ ĐỒ', value: '0', icon: 'fa fa-reply emerald-bg' },
-    { title: 'GIÁ TRỊ TRẢ LẠI', value: '0', icon: 'fa fa-reply-all emerald-bg' },
-    { title: 'GHI NỢ', value: '0', icon: 'fa fa-address-card emerald-bg' },
-    { title: 'BẢN SỬ DỤNG', value: '0 / 30', icon: 'fa fa-crosshairs emerald-bg' },
+    { title: 'ĐƠN HÀNG', value: '0', icon: 'fa fa-tags ' },
+    { title: 'DOANH THU', value: '0', icon: 'fa fa-cart-arrow-down ' },
+    { title: 'HUỶ/TRẢ ĐỒ', value: '0', icon: 'fa fa-reply ' },
+    { title: 'GIÁ TRỊ TRẢ LẠI', value: '0', icon: 'fa fa-reply-all' },
+    { title: 'GHI NỢ', value: '0', icon: 'fa fa-address-card ' },
+    { title: 'PHÒNG CÓ KHÁCH', value: '0 / 30', icon: 'fa fa-crosshairs ' },
   ];
 
   return (
