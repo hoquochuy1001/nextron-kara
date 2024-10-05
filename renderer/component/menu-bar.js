@@ -4,12 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
-import Link from 'next/link';
+
 
 function MenuBar() {
   return (
     <>
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary" style={{backgroundColor:"blue !important"}}>
       <Container>
         <Navbar.Brand href="/home">KARAOKE NICE</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
